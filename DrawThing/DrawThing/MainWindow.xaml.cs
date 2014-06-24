@@ -23,8 +23,41 @@ namespace DrawThing
         public MainWindow()
         {
             InitializeComponent();
-        }
+        } 
+        //Figured out with help from the power of the internet ~ Noah
+        void PushMe_Button(object sender, RoutedEventArgs e)
+        {
+            //Copied and pasted ~ Noah
+            DrawingCanvas.Children.Clear();
+            
+            //Half copied, half figured out on own ~ Noah
+            double bigCenter1 = DrawingCanvas.Height / 2;
+            double bigCenter2 = DrawingCanvas.Width / 2;
+            double biggerRadius = 50;
 
+            //Actually figured it out on my own, after 50 minutes ~ Noah
+            Ellipse bigCircle = new Ellipse();
+            
+            //Pretty much copy and pasted from your work ~ Noah
+            bigCircle.Height = biggerRadius * 2;
+            bigCircle.Width = biggerRadius * 2;
+
+            //Pretty much copy and pasted from your work ~ Noah
+            SolidColorBrush brush = new SolidColorBrush();
+            bigCircle.Fill = brush;
+            bigCircle.StrokeThickness = 15;
+            bigCircle.Stroke = Brushes.Yellow;
+
+            //Couldn't get it to go to the center so I had to guess and check ~ Noah
+            double center1 = bigCenter1;
+            double center2 = bigCenter2;
+            Canvas.SetLeft(bigCircle, center1 + 50);
+            Canvas.SetTop(bigCircle, center2 - 160);
+
+            //Draws the circle ~ Noah (Also, I couldn't figure out how to fill the circle with color.)
+            DrawingCanvas.Children.Add(bigCircle);
+        }
+        
         private void DrawButton_Click(object sender, RoutedEventArgs e)
         {
             // Remove anything that is currently being drawn
@@ -63,12 +96,12 @@ namespace DrawThing
                 SolidColorBrush brush = new SolidColorBrush();
                 brush.Color = Color.FromArgb(255, (byte)(255 * (1 - percentDone)), (byte)(255 * percentDone), 0);
                 circle.Fill = brush;
-                circle.StrokeThickness = 1;
-                circle.Stroke = Brushes.Black;
+                circle.StrokeThickness = 2;
+                circle.Stroke = Brushes.Yellow;
 
                 // Draw the circle
                 DrawingCanvas.Children.Add(circle);
-            }
+            }            
         }
     }
 }

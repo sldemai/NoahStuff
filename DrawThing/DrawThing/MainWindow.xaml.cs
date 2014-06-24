@@ -37,7 +37,7 @@ namespace DrawThing
             double bigRadius = 80;
 
             // How big should each circle be?
-            double diameter = 40;
+            double diameter = 60;
 
             // Figure out how many circles to draw
             int circleCount = Convert.ToInt32(CircleCount.Text);

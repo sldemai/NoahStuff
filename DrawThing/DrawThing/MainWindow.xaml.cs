@@ -61,7 +61,7 @@ namespace DrawThing
 
                 // Set the color of the circle
                 SolidColorBrush brush = new SolidColorBrush();
-                brush.Color = Color.FromArgb(255, 0, (byte)(255 * (1 - percentDone)), (byte)(255 * percentDone));
+                brush.Color = Color.FromArgb(255, (byte)(255 * (1 - percentDone)), (byte)(255 * percentDone), 0);
                 circle.Fill = brush;
                 circle.StrokeThickness = 1;
                 circle.Stroke = Brushes.Black;

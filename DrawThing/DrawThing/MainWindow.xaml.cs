@@ -25,7 +25,7 @@ namespace DrawThing
             InitializeComponent();
         } 
         //Figured out with help from the power of the internet ~ Noah
-        void PushMe_Button(object sender, RoutedEventArgs e)
+        public void PushMe_Button(object sender, RoutedEventArgs e)
         {
             //Copied and pasted ~ Noah
             DrawingCanvas.Children.Clear();
@@ -72,9 +72,35 @@ namespace DrawThing
             Canvas.SetLeft(smallCircle, center3 + 70);
             Canvas.SetTop(smallCircle, center4 - 140);
 
+            smallCircle.Fill = Brushes.YellowGreen;
+
             DrawingCanvas.Children.Add(smallCircle);
 
+            
+            //Putting button in middle of circle
+            //Naming button radius (not technically speaking)
+            double midButtonRadius = 15;
+            
+            //naming new button
+            Button middleButton = new Button();
 
+            //giving button dimensions
+            middleButton.Height = midButtonRadius * 2;
+            middleButton.Width = midButtonRadius * 2;
+
+            //giving the button a position
+            double midButtCenter1 = bigCenter1;
+            double midButtCenter2 = bigCenter2;
+            Canvas.SetLeft(middleButton, midButtCenter1 + 85);
+            Canvas.SetTop(middleButton, midButtCenter1 - 13);
+
+            //What the button says
+            middleButton.Content = "Push";
+            middleButton.FontSize = 12;
+
+            //Draws the button
+            DrawingCanvas.Children.Add(middleButton);
+ 
             //Adding a third circle
             double biggestRadius = 70;
 
@@ -180,8 +206,8 @@ namespace DrawThing
                 circle.Stroke = Brushes.Yellow;
 
                 // Draw the circle
-                DrawingCanvas.Children.Add(circle);
-            }            
+                DrawingCanvas.Children.Add(circle);            
+            }   
         }
     }
 }
